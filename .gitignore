@@ -1,0 +1,37 @@
+# v0 sandbox internal files
+__v0_runtime_loader.js
+__v0_devtools.tsx
+__v0_jsx-dev-runtime.ts
+.snowflake/
+.v0-trash/
+.vercel/
+
+# Environment variables and secrets — never commit
+.env
+.env*.local
+.secrets/
+*.pem
+*.key
+
+# Local HTTPS certificates (from `next dev --experimental-https`)
+certificates/
+
+# Dependencies and build output
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+
+# Stale lockfile from the original v0 export — the project uses npm
+# (package-lock.json). Keeping both makes Vercel pick pnpm and fail.
+pnpm-lock.yaml
+
+# Logs and OS junk
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# Machine-specific local launcher
+run-dev.cmd
