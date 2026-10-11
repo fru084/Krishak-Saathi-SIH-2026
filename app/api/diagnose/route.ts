@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 
 import { CURATED_DIAGNOSES } from '@/lib/curated-diagnoses'
 import { assessCropHealth } from '@/lib/server/plantid'
+import { checkRateLimit } from '@/lib/server/rate-limit'
 import type { DiagnosisResult, Severity, TreatmentStep } from '@/lib/types'
 
 export const runtime = 'nodejs'
@@ -44,6 +45,10 @@ function toSteps(lines: string[] | undefined): TreatmentStep[] {
 }
 
 export async function POST(request: Request) {
+  // Each diagnosis spends one Plant.id credit, so keep this tight.
+  const limited = checkRateLimit(request, 'diagnose', 10)
+  if (limited) return limited
+
   try {
     const form = await request.formData()
     const image = form.get('image')
