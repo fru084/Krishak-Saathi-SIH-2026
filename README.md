@@ -2,6 +2,11 @@
 
 Your crop doctor in your pocket. A farmer photographs an affected leaf and gets a disease diagnosis in seconds. The app adds an organic-first treatment plan, a live "safe to spray?" rain check, and everything translated and spoken aloud in the farmer's own language.
 
+## Demo
+
+- Demo video: https://youtu.be/h3aqzovJLK8
+- Live app: https://krishak-saathi.vercel.app
+
 ## Features
 
 - Disease diagnosis from a leaf photo (Plant.id, 35,000+ species, 500+ conditions)
