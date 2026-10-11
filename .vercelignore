@@ -1,0 +1,21 @@
+# The Vercel CLI uploads from disk and does NOT honor .gitignore, so
+# everything private or stale has to be listed here too.
+
+# Secrets and local credentials — never upload
+.env
+.env*.local
+.secrets
+certificates
+*.pem
+*.key
+
+# Stale pnpm lockfile (the project uses npm / package-lock.json)
+pnpm-lock.yaml
+
+# Generated or machine-specific
+node_modules
+.next
+.git
+*.tsbuildinfo
+next-env.d.ts
+run-dev.cmd

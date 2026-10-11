@@ -35,3 +35,5 @@ Thumbs.db
 
 # Machine-specific local launcher
 run-dev.cmd
+
+.vercel
